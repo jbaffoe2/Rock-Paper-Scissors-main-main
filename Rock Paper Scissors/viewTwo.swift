@@ -41,7 +41,7 @@ class viewTwo: UIViewController {
             loser1.text = "Loser" }
        
        else if ourChoice == 2 && cpuChoice == 0 {
-            loser1.text = "loser"}
+            loser1.text = "Loser"}
         
        else if ourChoice == 0 && cpuChoice == 0 {
             loser1.text = "Tie"
@@ -97,3 +97,4 @@ class viewTwo: UIViewController {
         
     }
 
+// for round swapping, it might work to create a counter and set all the objects in round 1 = to 0 for the counter, then have it set so when the loser text changes to the outcome have the counter value change to 1. All the objects in round 2 would be associated with the counter value 1. Repeat for the third round.
