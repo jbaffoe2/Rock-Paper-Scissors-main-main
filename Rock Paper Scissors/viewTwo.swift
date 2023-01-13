@@ -4,87 +4,33 @@
 //
 //  Created by Huber, Jakob - Student on 11/18/22.
 //
-
 import UIKit
-
 class viewTwo: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         intOnethroughThree = Int.random(in: 0...2)
+        computerChoice = Choice(rawValue: intOnethroughThree) ?? .rock
+        userChoice = Choice(rawValue: receivingInteger) ?? .rock
         print(receivingInteger)
-        declareWinner(ourChoice: receivingInteger, cpuChoice: intOnethroughThree)
+        //declareWinner(ourChoice: receivingInteger, cpuChoice: intOnethroughThree)
+        declareWinner(ourChoice: userChoice, cpuChoice: computerChoice)
         print(intOnethroughThree)
     }
-    
     @IBOutlet weak var loser1: UILabel!
     var receivingString = ""
     var receivingInteger = 0
-    
     var intOnethroughThree = Int.random(in: 0...2)
-    
+    var computerChoice: Choice = .rock
+    var userChoice: Choice = .rock
     @IBOutlet weak var playerImage: UIImageView!
-    
     @IBOutlet weak var computerImage1: UIImageView!
-    
-    
-    
-    func declareWinner(ourChoice: Int, cpuChoice: Int){
-        
-        if receivingInteger == 0 && intOnethroughThree == 1 {
-            loser1.text = "Loser"
-        }
-      
-        else if ourChoice == 1 && cpuChoice == 2 {
-            loser1.text = "Loser" }
-       
-       else if ourChoice == 2 && cpuChoice == 0 {
-            loser1.text = "Loser"}
-        
-       else if ourChoice == 0 && cpuChoice == 0 {
-            loser1.text = "Tie"
-        }
-       else if ourChoice == 1 && cpuChoice == 1 {
-            loser1.text = "Tie"
-        }
-       else if ourChoice == 2 && cpuChoice == 2 {
-            loser1.text = "Tie"
-        }
-       else if ourChoice == 0 && cpuChoice == 2 {
-            loser1.text = "Winner"
-        }
-       else if ourChoice == 1 && cpuChoice == 0 {
-            loser1.text = "Winner"
-        }
-        else if ourChoice == 2 && cpuChoice == 1 {
-            loser1.text = "Winner"
-            
-        }
-        
-        if ourChoice == 0 {
-           playerImage.image = UIImage(named:"Rok")
-       }
-       
-        else if ourChoice == 1 {
-            playerImage.image = UIImage(named:"paper")
-        }
-            
-        else if ourChoice == 2 {
-            playerImage.image = UIImage(named:"scissors")
-        }
-            
-        if cpuChoice == 0{
-            computerImage1.image = UIImage(named:"Rok")
-        }
-        else if cpuChoice == 1 {
-            computerImage1.image = UIImage(named:"paper")
-        }
-        else if cpuChoice == 2 {
-            computerImage1.image = UIImage(named:"scissors")
-        }
-        }
+    func declareWinner(ourChoice: Choice, cpuChoice: Choice){
+        let game = Game(userChoice: userChoice, computerChoice: computerChoice)
+        loser1.text = game.result
+        playerImage.image = UIImage(named: ourChoice.imageName)
+        computerImage1.image = UIImage(named: computerChoice.imageName)
+    }
         /*
          // MARK: - Navigation
          
@@ -96,5 +42,6 @@ class viewTwo: UIViewController {
          */
         
     }
+    
+    // for round swapping, it might work to create a counter and set all the objects in round 1 = to 0 for the counter, then have it set so when the loser text changes to the outcome have the counter value change to 1. All the objects in round 2 would be associated with the counter value 1. Repeat for the third round.
 
-// for round swapping, it might work to create a counter and set all the objects in round 1 = to 0 for the counter, then have it set so when the loser text changes to the outcome have the counter value change to 1. All the objects in round 2 would be associated with the counter value 1. Repeat for the third round.
