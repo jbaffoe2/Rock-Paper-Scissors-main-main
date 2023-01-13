@@ -12,7 +12,6 @@ enum Choice: Int { case rock, paper, scissors }
 extension Choice {
     var imageName: String {
         switch self {
-            
         case .rock:
             return "Rok"
         case .paper:
@@ -21,10 +20,8 @@ extension Choice {
             return "scissors"
         }
     }
-    
     var better: Choice {
         switch self {
-            
         case .rock:
             return .paper
         case .paper:
@@ -35,10 +32,8 @@ extension Choice {
     }
     var worse: Choice {
         switch self {
-            
         case .rock:
             return .scissors
-            
         case .paper:
             return .rock
         case .scissors:
@@ -46,19 +41,16 @@ extension Choice {
         }
     }
 }
-
 struct Game {
     var userChoice: Choice
     var computerChoice: Choice
 }
-
 extension Game {
     var result: String {
         if userChoice == computerChoice {
             return "tie"
         } else if  userChoice == computerChoice.worse {
             return "win"
-        
         }else {
             return "lose"
         }
