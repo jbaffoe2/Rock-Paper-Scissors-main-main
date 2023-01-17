@@ -14,6 +14,12 @@ class ResultsCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var computerImage: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
