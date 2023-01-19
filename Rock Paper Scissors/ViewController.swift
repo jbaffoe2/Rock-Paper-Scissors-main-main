@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var pictureNames = ["paper","rok","scissor"]
     var 🐵 = ""
     var choiceAsInteger = 0
+    var games : [Game] = []
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -73,14 +74,21 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let nvc = segue.destination as! viewTwo
+        let nvc = segue.destination as! ResultsViewController
         
-        if segue.identifier == "mySegue" {
-             nvc.receivingInteger = choiceAsInteger
-            
-            
-            
+        let computer =  Int.random(in: 0...2)
+        if let computerChoice = Choice(rawValue: computer), let ourChoice = Choice(rawValue: choiceAsInteger) {
+           let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
+            games.append(game)
         }
+        nvc.games = games
+        
+//        if segue.identifier == "mySegue" {
+//             // nvc.receivingInteger = choiceAsInteger
+//
+//
+//
+//        }
   }
     
     

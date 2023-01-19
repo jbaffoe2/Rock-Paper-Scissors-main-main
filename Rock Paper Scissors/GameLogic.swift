@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Choice: Int { case rock, paper, scissors }
 
@@ -20,6 +21,12 @@ extension Choice {
             return "scissors"
         }
     }
+    
+    var image: UIImage? {
+        return UIImage(named: imageName)
+
+    }
+    
     var better: Choice {
         switch self {
         case .rock:

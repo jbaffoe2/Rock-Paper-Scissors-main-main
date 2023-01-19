@@ -44,7 +44,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                         <connections>
-                                            <segue destination="QLh-Ae-vaN" kind="show" identifier="mySegue" id="TrF-ZR-PkV"/>
+                                            <segue destination="0Ue-ZJ-RBR" kind="show" identifier="mySegue" id="ie1-8F-O7O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -241,7 +241,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAr-ll-ZHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764.6153846153845" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="3201" y="3"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="y03-Jg-aBc">
+            <objects>
+                <tableViewController id="0Ue-ZJ-RBR" customClass="ResultsViewController" customModule="Rock_Paper_Scissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5Wi-ej-6cN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="0Ue-ZJ-RBR" id="kFE-5P-60A"/>
+                            <outlet property="delegate" destination="0Ue-ZJ-RBR" id="wxe-Ju-mmR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xMI-M3-Fxt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2o9-rC-VVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rVL-lZ-Q65">

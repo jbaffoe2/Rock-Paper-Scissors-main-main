@@ -17,6 +17,11 @@ class ResultsCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var computerImage: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
+    func configure(game: Game) {
+        userImage.image = game.userChoice.image
+        computerImage.image = game.computerChoice.image
+        resultLabel.text = game.result
+    }
     
     
     
