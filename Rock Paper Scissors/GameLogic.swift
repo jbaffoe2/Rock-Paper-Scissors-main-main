@@ -20,8 +20,15 @@ extension Choice {
         case .scissors:
             return "scissors"
         }
+       
+        
     }
     
+    static func random() -> Choice {
+        let i = Int.random(in:0...2)
+        let x = Choice(rawValue: i) ?? .rock
+        return x
+    }
     var image: UIImage? {
         return UIImage(named: imageName)
 
@@ -56,7 +63,7 @@ extension Game {
     var result: String {
         if userChoice == computerChoice {
             return "tie"
-        } else if  userChoice == computerChoice.worse {
+        } else if  userChoice == computerChoice.better {
             return "win"
         }else {
             return "lose"

@@ -9,9 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var rockButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        rockButton.imageView?.contentMode = .scaleAspectFit
+        rockButton.addTarget(self, action: #selector(buttonTapped(:)), for: UIControl.Event.touchUpInside)
         
         assignbackground()
     }
@@ -33,6 +36,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scissor: UIImageView!
     
+    func buttonTapped(_ button: UIButton) {
+        choiceAsInteger = button.tag
+        performSegue(withIdentifier: "mySegue", sender: nil)
+    }
 
     @IBAction func tapGesture(_ sender: Any) {
         let selectedPoint = ((sender as! AnyObject).location(in: stackView))
@@ -81,7 +88,7 @@ class ViewController: UIViewController {
            let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
             games.append(game)
         }
-        nvc.games = games
+        nvc.games = games.reversed()
         
 //        if segue.identifier == "mySegue" {
 //             // nvc.receivingInteger = choiceAsInteger
