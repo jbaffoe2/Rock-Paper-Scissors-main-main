@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjB-ut-WFP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hjB-ut-WFP">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,42 +18,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="sYZ-Ic-rwT">
-                                <rect key="frame" x="40" y="98.000000000000057" width="334" height="890.33333333333348"/>
+                                <rect key="frame" x="40" y="98" width="334" height="588"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="su6-wR-8ET">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="su6-wR-8ET">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="H7a-9r-8Nm"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Rok"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Rok"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rok" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-Ng-rt5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bC-Gk-4cW">
                                         <rect key="frame" x="0.0" y="214" width="334" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="yqV-GC-GUx"/>
+                                            <constraint firstAttribute="height" constant="160" id="RL3-xB-pWh"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="Skd-xy-8ta">
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="paper"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V6-Ec-g76">
                                         <rect key="frame" x="0.0" y="428" width="334" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="Klo-wF-VTS"/>
+                                            <constraint firstAttribute="height" constant="160" id="vIY-Y8-HX5"/>
                                         </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scissors" translatesAutoresizingMaskIntoConstraints="NO" id="onL-zh-tYu">
-                                        <rect key="frame" x="0.0" y="642" width="334" height="160"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="Isa-hM-9GU"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="kWA-rG-keT"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spr-rs-rIx">
-                                        <rect key="frame" x="0.0" y="856" width="334" height="34.333333333333371"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                        <connections>
-                                            <segue destination="0Ue-ZJ-RBR" kind="show" identifier="mySegue" id="ie1-8F-O7O"/>
-                                        </connections>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="scissors"/>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
@@ -72,14 +61,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="6i6-E4-S96"/>
                     <connections>
-                        <outlet property="paper" destination="Skd-xy-8ta" id="YEh-u1-pO1"/>
-                        <outlet property="rock" destination="nxE-Ng-rt5" id="QqV-tf-B02"/>
+                        <outlet property="paperButton" destination="3bC-Gk-4cW" id="Sai-8t-6NL"/>
                         <outlet property="rockButton" destination="su6-wR-8ET" id="bt5-yy-yW3"/>
-                        <outlet property="scissor" destination="onL-zh-tYu" id="Bys-K8-vTn"/>
+                        <outlet property="scissorsButton" destination="2V6-Ec-g76" id="GjB-jZ-CjQ"/>
                         <outlet property="stackView" destination="sYZ-Ic-rwT" id="xXf-zT-IPd"/>
-                        <outletCollection property="sellectImage" destination="nxE-Ng-rt5" collectionClass="NSMutableArray" id="kvU-wW-Kcw"/>
-                        <outletCollection property="sellectImage" destination="Skd-xy-8ta" collectionClass="NSMutableArray" id="fIT-bB-lmN"/>
-                        <outletCollection property="sellectImage" destination="onL-zh-tYu" collectionClass="NSMutableArray" id="8AQ-1P-SXc"/>
+                        <segue destination="0Ue-ZJ-RBR" kind="show" identifier="mySegue" id="1E6-UH-OMW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

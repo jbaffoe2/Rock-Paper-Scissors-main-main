@@ -10,13 +10,20 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var rockButton: UIButton!
+    @IBOutlet weak var paperButton: UIButton!
+    
+    @IBOutlet weak var scissorsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rockButton.imageView?.contentMode = .scaleAspectFit
-        rockButton.addTarget(self, action: #selector(buttonTapped(:)), for: UIControl.Event.touchUpInside)
+        let buttons = [rockButton, paperButton, scissorsButton]
+        for (index, button) in buttons.enumerated() {
+            button?.imageView?.contentMode = .scaleAspectFit
+            button?.addTarget(self, action: #selector(buttonTapped(_:)), for: UIControl.Event.touchUpInside)
+            button?.tag = index
+            assignbackground()
+        }
         
-        assignbackground()
     }
     var counter: Int = 0
     var counterValue = ""
@@ -27,8 +34,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
     
-
-
+    
+    
     
     @IBOutlet weak var rock: UIImageView!
     
@@ -36,34 +43,34 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scissor: UIImageView!
     
-    func buttonTapped(_ button: UIButton) {
+    @objc func buttonTapped(_ button: UIButton) {
         choiceAsInteger = button.tag
         performSegue(withIdentifier: "mySegue", sender: nil)
     }
-
-    @IBAction func tapGesture(_ sender: Any) {
-        let selectedPoint = ((sender as! AnyObject).location(in: stackView))
-       
-        for view in sellectImage
-        {
-            if view.frame.contains(selectedPoint)
-            {
-                choiceAsInteger = view.tag
-//                sellectImage.imag = images[pictureNames]
-              
-            print(choiceAsInteger)
-                
-            }
-                
-                
-                
-        }
-        
-        
-    }
+    //
+    //    @IBAction func tapGesture(_ sender: Any) {
+    //        let selectedPoint = ((sender as! AnyObject).location(in: stackView))
+    //
+    //       for view in sellectImage
+    //        {
+    //        if view.frame.contains(selectedPoint)
+    //         {
+    //            choiceAsInteger = view.tag
+    //             sellectImage.imag = images[pictureNames]
+    //
+    //           print(choiceAsInteger)
+    //
+    //           }
+    //
+    //
+    //
+    //       }
+    //
+    //
+    //    }
     
     
-  
+    
     
     func assignbackground()
     {
@@ -85,32 +92,32 @@ class ViewController: UIViewController {
         
         let computer =  Int.random(in: 0...2)
         if let computerChoice = Choice(rawValue: computer), let ourChoice = Choice(rawValue: choiceAsInteger) {
-           let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
+            let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
             games.append(game)
         }
         nvc.games = games.reversed()
         
-//        if segue.identifier == "mySegue" {
-//             // nvc.receivingInteger = choiceAsInteger
-//
-//
-//
-//        }
-  }
+        //        if segue.identifier == "mySegue" {
+        //             // nvc.receivingInteger = choiceAsInteger
+        //
+        //
+        //
+        //        }
+    }
     
     
     @IBOutlet var sellectImage: [UIImageView]!
     
-//
-//    pictureNames = letters[counter]
-//    currentLetterLabel.text = pictureNames
-//    let selectedPoint = ((sender as! AnyObject).location(in: stackView))
-//        for label in letterOne {
-//            if label.frame.contains(selectedPoint) {
-//               label.text = "\(pictureNames!)"
-//
-//            }
-//        }
+    //
+    //    pictureNames = letters[counter]
+    //    currentLetterLabel.text = pictureNames
+    //    let selectedPoint = ((sender as! AnyObject).location(in: stackView))
+    //        for label in letterOne {
+    //            if label.frame.contains(selectedPoint) {
+    //               label.text = "\(pictureNames!)"
+    //
+    //            }
+    //        }
     
     
     
