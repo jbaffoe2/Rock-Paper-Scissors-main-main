@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="RKT-pT-uHq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="sYZ-Ic-rwT">
                                 <rect key="frame" x="40" y="98" width="334" height="588"/>
                                 <subviews>
@@ -54,8 +57,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="RKT-pT-uHq" secondAttribute="bottom" id="467-ag-kfc"/>
                             <constraint firstItem="sYZ-Ic-rwT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="4Rc-Vc-8hd"/>
+                            <constraint firstItem="RKT-pT-uHq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Z0-kg-0HM"/>
+                            <constraint firstItem="RKT-pT-uHq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="APB-LI-nI3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sYZ-Ic-rwT" secondAttribute="trailing" constant="40" id="Lq6-SK-Ro8"/>
+                            <constraint firstItem="RKT-pT-uHq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UgT-z3-fMO"/>
+                            <constraint firstAttribute="trailing" secondItem="RKT-pT-uHq" secondAttribute="trailing" id="hM6-P1-LXA"/>
                             <constraint firstItem="sYZ-Ic-rwT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="quB-LV-7Mo"/>
                         </constraints>
                     </view>
@@ -278,6 +286,7 @@
     </scenes>
     <resources>
         <image name="Rok" width="196" height="257"/>
+        <image name="background" width="1450" height="2200"/>
         <image name="paper" width="201" height="251"/>
         <image name="scissors" width="225" height="225"/>
         <systemColor name="labelColor">

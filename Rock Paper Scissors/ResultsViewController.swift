@@ -21,10 +21,26 @@ class ResultsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UINib(nibName: "ResultsCell", bundle: nil), forCellReuseIdentifier: "ResultsCell")
+        assignbackground()
     }
     
     // MARK: - Table view data source
-
+    func assignbackground()
+    {
+        let background = UIImage(named: "background")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.center = view.center
+        tableView.backgroundView = imageView
+  
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
         
