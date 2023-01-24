@@ -33,16 +33,18 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33F-gc-lGS">
                         <rect key="frame" x="326.66666666666669" y="110" width="26.666666666666686" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-TT-0LK">
                         <rect key="frame" x="310.66666666666669" y="199" width="59" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="MdF-SR-8i7" firstAttribute="centerY" secondItem="eQd-Qg-T7Q" secondAttribute="centerY" id="Cr7-4z-KjE"/>
                     <constraint firstItem="kGp-gq-5d3" firstAttribute="centerY" secondItem="eQd-Qg-T7Q" secondAttribute="centerY" id="DdM-1H-qD9"/>
@@ -54,6 +56,7 @@
                     <constraint firstItem="x3S-TT-0LK" firstAttribute="centerX" secondItem="eQd-Qg-T7Q" secondAttribute="centerX" id="uPm-sN-h4V"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="computerImage" destination="MdF-SR-8i7" id="HwI-iO-jX0"/>
                 <outlet property="resultLabel" destination="x3S-TT-0LK" id="8RU-Lx-ITM"/>

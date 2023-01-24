@@ -14,14 +14,18 @@ class ResultsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UINib(nibName: "ResultsCell", bundle: nil), forCellReuseIdentifier: "ResultsCell")
         assignbackground()
+        
+        
+        let timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
+
     }
     
     // MARK: - Table view data source
@@ -39,8 +43,42 @@ class ResultsViewController: UITableViewController {
         tableView.backgroundView = imageView
   
     }
+  var resultCase = ""
+   
+ 
     
     
+    @objc func fireTimer() {
+        let alertMessage = games[0].result
+        if alertMessage == "win" {
+             resultCase = "You Won, Congrats you beat a random number .... Loser"
+        } else if alertMessage == "tie" {
+            resultCase = "You Tied, Kinda Mid"
+        }
+        else { resultCase = "You Lost, I dont need to say much .... Loser "
+            
+        }
+        var dialogMessage = UIAlertController(title: "Attention", message: resultCase, preferredStyle: .alert)
+        print("Timer fired!")
+      
+        let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            self.navigationController?.popViewController(animated: true)
+
+         })
+        let continueview = UIAlertAction(title: "Continue Viewing", style: .default, handler: { (action) -> Void in
+            print("continue button tapped")
+         })
+     
+        dialogMessage.addAction(ok)
+
+        dialogMessage.addAction(continueview)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+        
+    }
+
+  
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
         
