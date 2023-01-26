@@ -58,7 +58,7 @@ class ResultsViewController: UITableViewController {
         else { resultCase = "You Lost, I dont need to say much .... Loser "
             
         }
-        var dialogMessage = UIAlertController(title: "Attention", message: resultCase, preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Attention", message: resultCase, preferredStyle: .alert)
         print("Timer fired!")
       
         let ok = UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in
@@ -66,7 +66,7 @@ class ResultsViewController: UITableViewController {
             self.navigationController?.popViewController(animated: true)
 
          })
-        let continueview = UIAlertAction(title: "Continue Viewing", style: .default, handler: { (action) -> Void in
+        let continueview = UIAlertAction(title: "View", style: .default, handler: { (action) -> Void in
             print("continue button tapped")
          })
      

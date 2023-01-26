@@ -21,7 +21,10 @@ class ViewController: UIViewController {
             button?.imageView?.contentMode = .scaleAspectFit
             button?.addTarget(self, action: #selector(buttonTapped(_:)), for: UIControl.Event.touchUpInside)
             button?.tag = index
-            
+            infoButton.target = self
+            infoButton.action = #selector(infoButtonTapped)
+            newspaperButton.target = self
+            newspaperButton.action = #selector(newspaperButtonTapped)
         }
         
     }
@@ -71,8 +74,20 @@ class ViewController: UIViewController {
     
     
     
+ @IBOutlet weak var newspaperButton: UIBarButtonItem!
     
-   
+    @IBOutlet weak var infoButton: UIBarButtonItem!
+    
+    @objc func infoButtonTapped() {
+        performSegue(withIdentifier: "info", sender: nil)
+       print ("info")
+    }
+    @objc func newspaperButtonTapped () {
+        
+        print ("newspaper")
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
