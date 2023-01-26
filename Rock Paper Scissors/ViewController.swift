@@ -74,6 +74,9 @@ class ViewController: UIViewController {
     
     
     
+    
+    
+    
  @IBOutlet weak var newspaperButton: UIBarButtonItem!
     
     @IBOutlet weak var infoButton: UIBarButtonItem!
@@ -91,15 +94,15 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        let nvc = segue.destination as! ResultsViewController
-        
-        let computer =  Int.random(in: 0...2)
-        if let computerChoice = Choice(rawValue: computer), let ourChoice = Choice(rawValue: choiceAsInteger) {
-            let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
-            games.append(game)
+        if let nvc = segue.destination as? ResultsViewController {
+            
+            let computer =  Int.random(in: 0...2)
+            if let computerChoice = Choice(rawValue: computer), let ourChoice = Choice(rawValue: choiceAsInteger) {
+                let game = Game(userChoice: ourChoice, computerChoice: computerChoice)
+                games.append(game)
+            }
+            nvc.games = games.reversed()
         }
-        nvc.games = games.reversed()
-        
         //        if segue.identifier == "mySegue" {
         //             // nvc.receivingInteger = choiceAsInteger
         //
