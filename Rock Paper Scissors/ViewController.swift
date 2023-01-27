@@ -50,6 +50,15 @@ class ViewController: UIViewController {
         choiceAsInteger = button.tag
         performSegue(withIdentifier: "mySegue", sender: nil)
     }
+    
+    
+//    @objc func newsTapped(_ button: UIBarButtonItem) {
+//        performSegue(withIdentifier: "newspaper", sender: nil)
+//    }
+//  
+//    @objc func infoTapped(_ button: UIBarButtonItem) {
+//        performSegue(withIdentifier: "info", sender: nil)
+//    }
     //
     //    @IBAction func tapGesture(_ sender: Any) {
     //        let selectedPoint = ((sender as! AnyObject).location(in: stackView))
@@ -86,8 +95,9 @@ class ViewController: UIViewController {
        print ("info")
     }
     @objc func newspaperButtonTapped () {
+        performSegue(withIdentifier: "newspaper", sender: nil)
+       print ("newspaper")
         
-        print ("newspaper")
     }
     
     
@@ -102,6 +112,9 @@ class ViewController: UIViewController {
                 games.append(game)
             }
             nvc.games = games.reversed()
+        } else if let results = segue.destination as? summaryVC{
+            
+            results.games = games
         }
         //        if segue.identifier == "mySegue" {
         //             // nvc.receivingInteger = choiceAsInteger

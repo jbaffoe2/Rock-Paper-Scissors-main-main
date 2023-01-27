@@ -24,7 +24,7 @@ class ResultsViewController: UITableViewController {
         assignbackground()
         
         
-        let timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
+        let _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
 
     }
     
