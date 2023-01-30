@@ -11,14 +11,14 @@ private let reuseIdentifier = "Cell"
 
 class summaryVC: UIViewController {
     var games : [Game] = []
-    var wins: Int = 0
+    var wins = 0
     var losses = 0
     var ties = 0
     
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var lossLabel: UILabel!
-    
     @IBOutlet weak var tieLabel: UILabel!
+    
     override func viewDidLoad() { //MARK: viewDidLoadOpen
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -34,11 +34,11 @@ class summaryVC: UIViewController {
             else { ties += 1
             }
             
-            winsLabel.text = "\(wins)"
-            lossLabel.text = "\(losses)"
-         tieLabel.text = "\(ties)"
+           
         }
-        
+        winsLabel.text = "\(wins)"
+        lossLabel.text = "\(losses)"
+     tieLabel.text = "\(ties)"
     }// MARK: viewDidLoadClose
     
   
